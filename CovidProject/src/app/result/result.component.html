@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        <span [style.color]= "result ? 'red':'green'" style="font-size: large;">You have chances of being covid </span>
+                    </td>
+                    <td>
+                        <span [style.color]= "result ? 'red':'green'" style="font-size: large;">{{result ? 'POSITIVE' : 'NEGATIVE'}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span [style.color]= "result ? 'red':'green'" style="font-size: large;">Total number  of checks </span>
+                    </td>
+                    <td>
+                        <span [style.color]= "result ? 'red':'green'" style="font-size: large;">{{totalcases}}</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span [style.color]= "result ? 'red':'green'" style="font-size: large;">Total number of positive checks</span>
+                    </td>
+                    <td [style.color]= "result ? 'red':'green'" style="font-size: large;">{{positivecases}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

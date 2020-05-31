@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/home" style="cursor: pointer;">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li routerLink="/home" routerLinkActive="active" style="cursor: pointer;" *ngIf="!isAuthenticated"><a>Home</a></li>
+        <li routerLink="/register" routerLinkActive="active" style="cursor: pointer;" *ngIf="!isAuthenticated"><a >Register</a></li>
+        <li routerLink="/login" routerLinkActive="active" style="cursor: pointer;" *ngIf="!isAuthenticated"><a>LogIn</a></li>
+        <li routerLink="/questions" routerLinkActive="active" style="cursor: pointer;" *ngIf="isAuthenticated"><a>Take Test</a></li>
+        <li routerLink="/adminregistration" routerLinkActive="active" style="cursor: pointer;" *ngIf="isAuthenticated && isAdmin"><a>Register Admin</a></li>
+        <li routerLink="/removeuser" routerLinkActive="active" style="cursor: pointer;" *ngIf="isAuthenticated && isAdmin"><a>Remove User</a></li>
+        <li routerLink="/editquestions" routerLinkActive="active" style="cursor: pointer;" *ngIf="isAuthenticated && isAdmin"><a>Edit Questions</a></li>
+        <li routerLinkActive="active" style="cursor: pointer;" *ngIf="isAuthenticated" (click)="onLogout()"><a>Logout</a></li>
+      </ul>
+    </div>
+  </nav>

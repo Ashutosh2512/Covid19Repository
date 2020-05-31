@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="margin-left: 200px; margin-right: 200px;">
+            <fieldset>
+            <legend>Log In Form</legend>
+            <form [formGroup]="loginform" (ngSubmit)="login()">
+                <div class="form-group">
+                    <label for="username">username</label>
+                    <input id="username" class="form-Control" type="text" formControlName="username">
+                    <span class="help-block" *ngIf="!loginform.get('username').valid && loginform.get('username').touched">Please enter a valid username.</span>
+                </div>
+                <div class="form-group">
+                    <label for="password">password</label>
+                    <input id="password" class="form-Control" type="password" formControlName="password">
+                    <span class="help-block" *ngIf="!loginform.get('password').valid && loginform.get('password').touched">Please enter a valid password.</span>
+                </div>
+                <div class="alert alert-danger" *ngIf="error" style="margin-top: 10px;margin-left: 20px;margin-right: 20px;">
+                    <p> {{error}} </p>
+                </div>
+                <button type="submit" class="btn btn-primary">LogIn</button>
+            </form>
+        </fieldset>
+        </div>
+    </div>
+</div>

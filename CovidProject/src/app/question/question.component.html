@@ -1,0 +1,60 @@
+
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-10" style="margin-left: 150px;">
+      <form [formGroup]="QuestionForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="answers">
+          <p style="padding: 10px;">Here are your questions:</p>
+          <div *ngFor="let question of Questions;let i = index">
+            <div style="padding: 10px; border: solid 2px black; margin: 10px 10px;">
+			        <div style="padding: 10px;">{{question}}</div>
+              <tr>
+                <span for="yes" style="margin-left: 20px;">Yes</span>
+                <input id="yes" style="margin-bottom: 5px;" class="form-Control radio radio-inline" type="radio" [formControlName]="i" value="yes">
+                <span style="margin-left: 20px;" for="no">No</span>
+                <input id="no" style="margin-bottom: 5px;" class="form-Control radio radio-inline" type="radio" [formControlName]="i" value="no">
+              </tr>
+            </div>
+          </div>
+
+          <div style="padding: 10px;">
+            <button type="submit" class="btn btn-primary" 
+                  style="background-color: #4CAF50; 
+                  border: none;
+                  border-radius: 3px 3px;
+                  color: white;
+                  padding: 15px 32px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;">Submit Response
+            </button>
+        </div>
+      </div>
+      </form>
+    </div>
+  </div>
+ </div>
+
+
+<!---
+  <div class="row">
+    <div class="col-md-8 col-xs-offset-1">
+      <form [formGroup]="QuestionForm" (ngSubmit)="onSubmit()">
+        <div formArrayName="answers">
+          <p>Here are your questions:</p>
+          <div class="form-Group" *ngFor="let question of Questions;let i=index">
+            <span>{{question}}</span>
+            <tr>
+                <label for="yes">Yes</label>
+              <input id="yes" type="radio" class="form-control radio radio-inline" [formControlName]="i" value="yes">
+              <label for="no">no</label>
+              <input id="no" type="radio" class="form-control radio radio-inline" [formControlName]="i" value="no">
+            </tr>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Response</button>
+      </form>
+    </div>
+  </div>
+--->

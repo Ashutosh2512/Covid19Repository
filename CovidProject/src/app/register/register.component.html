@@ -1,0 +1,62 @@
+<div class="container">
+<div class="row">
+    <div class="col-xs-12 col-md-6" style="margin-left: 200px;margin-right: 200px;">
+        <fieldset>
+            <legend>Registration Form</legend>
+        <form [formGroup]="signupform" (ngSubmit)="onRegister()">
+            <div class="form-group">
+                <label for="firstname">Firstname</label>
+                <input style="margin-left: 10px;" id="firstname" class="form-Control" type="text" formControlName="firstname">
+            </div>
+            <div class="form-group">
+                <label for="lastname">Lastname</label>
+                <input style="margin-left: 10px;" id="lastname" class="form-Control" type="text" formControlName="lastname">
+            </div>
+            <div class="form-group">
+                <label for="username">username</label>
+                <input style="margin-left: 10px;" id="username" class="form-Control" type="text" formControlName="username">
+            </div>
+            <div class="form-group">
+                <label for="nationalId">National Id</label>
+                <input style="margin-left: 10px;" id="nationalId" class="form-Control" type="text" formControlName="nationalId">
+            </div>
+            <div class="form-group">
+                <label for="password">password</label>
+                <input style="margin-left: 10px;" id="password" class="form-Control" type="password" formControlName="password">
+                <p class="help-block" style="margin-left: 259px;" *ngIf="!signupform.get('password').valid && signupform.get('password').touched">Min length is 8 characters</p>
+            </div>
+            <div class="form-group">
+                <label for="repassword">Confirm password</label>
+                <input style="margin-left: 10px;" id="repassword" class="form-Control" type="password" formControlName="repassword">
+                <p class="help-block" style="margin-left: 259px;" *ngIf="!signupform.get('repassword').valid && signupform.get('repassword').touched">Passwords do not match.</p>
+            </div>
+            <div class="form-group">
+                <label for="email">EmailId</label>
+                <input style="margin-left: 10px;" id="email" class="form-Control" type="email" formControlName="emailId">
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input style="margin-left: 10px;" id="address" class="form-Control" type="text" formControlName="address">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input style="margin-left: 10px;" id="age" class="form-Control" type="number" formControlName="age">
+            </div>
+            <div class="form-group">
+                <tr>
+                    <label>gender</label>
+                    <span for="male" style="margin-left: 20px;">Male</span>
+                    <input id="male" style="margin-bottom: 5px;" class="form-Control radio radio-inline" type="radio" formControlName="gender" value="Male">
+                    <span style="margin-left: 20px;" for="female">Female</span>
+                    <input id="female" style="margin-bottom: 5px;" class="form-Control radio radio-inline" type="radio" formControlName="gender" value="Female">
+                </tr> 
+            </div>
+            <div class="alert alert-danger" *ngIf="error" style="margin-top: 10px;margin-left: 20px;margin-right: 20px;">
+                <p>{{error}}</p>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </fieldset>
+    </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container">
+    <div>
+        <div class="row">
+            <div class="col-md-6" style="margin-left: 200px;margin-right: 200px;">
+                   <fieldset>
+                       <legend>Removal Form</legend>
+                       <form [formGroup]="clientremovalform" (ngSubmit)="onRemove()"> 
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input style="margin-left: 10px;" id="username" type="text" class="form-Control" formControlName="username">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Remove</button>
+                    </form>
+                   </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
